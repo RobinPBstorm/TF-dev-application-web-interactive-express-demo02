@@ -161,3 +161,23 @@ import errorManager from './middlewares/errorManager.js';
 // toutes nos routes
 app.use(errorManager());
 ```
+
+## Pour utiliser un fichier .env
+
+Créer un fichier .env qui sera ignoré par le gitignore
+```
+PORT=3000
+...
+```
+
+Indique que l'on utilise .env
+```json
+"scripts": {
+    "start": "node --watch --env-file-if-exists=.env src/app.js"
+  },
+```
+
+On peut appeler les différentes constantes de ce fichier:
+```js
+const port = process.env.PORT || 3000; // 3000 est mi par défaut
+```

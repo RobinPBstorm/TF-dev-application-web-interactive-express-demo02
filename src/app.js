@@ -9,7 +9,7 @@ import usersRouter from './routers/user.router.js';
 
 // Confiurer notre application
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 // Permet de récupérer le contenu en json du body d'une requête
 app.use(express.json());
