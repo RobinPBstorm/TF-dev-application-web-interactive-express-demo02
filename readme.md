@@ -35,6 +35,8 @@ app.listen(port, ()=> {
 
 ## Ajouter la commande pour démarrer le projet dans le package.json
 
+L'option --watch de node permet de relancer automatiquement lors de l'enregistrement de nos modifications
+
 ```js
 "scripts": {
     ...
@@ -128,3 +130,4 @@ productRouter.get("/", (req, res) => {
     res.end();
 });
 ```
+
