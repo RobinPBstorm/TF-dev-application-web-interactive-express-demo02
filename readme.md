@@ -181,3 +181,33 @@ On peut appeler les différentes constantes de ce fichier:
 ```js
 const port = process.env.PORT || 3000; // 3000 est mi par défaut
 ```
+
+## Isoler les contollers
+
+Crée un fichier pour stocker l'objet controller/ fonctions
+```js
+const productController = {
+    getAll (req, res) {
+        ...
+    },
+    getOneById (req, res) {
+        ...
+    }
+};
+
+export default productController;
+```
+
+On inidque au routers qu'il va utiliser le controller
+```js
+// product.router.js
+import productController from "../controllers/product.controller.js";
+
+...
+
+productRouter.route("/")
+    .get(productController.getAllProduct);
+
+productRouter.route("/:id")
+    .get(productController.getOneById);
+```
