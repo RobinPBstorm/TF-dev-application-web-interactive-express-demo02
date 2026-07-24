@@ -1,4 +1,4 @@
-# Exercice 3 — Le routing
+# Exercice 2 — Le routing
 
 ## Objectif
 Organiser les routes avec `express.Router()` au lieu de tout mettre dans `app.js`.
