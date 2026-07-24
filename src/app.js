@@ -2,6 +2,7 @@ import express from 'express';
 
 import timer from './middlewares/timer.js';
 import productRouter from './routers/product.router.js';
+import usersRouter from './routers/user.router.js';
 
 // Confiurer notre application
 const app = express();
@@ -26,7 +27,8 @@ app.get('/', (req, res) => {
         </html>');
     res.end();
 });
-app.use('/product',productRouter);
+app.use('/products',productRouter);
+app.use('/users', usersRouter);
 
 app.listen(port, ()=> {
     console.log(`L'application écoute sur le port ${port}`);
