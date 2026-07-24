@@ -4,7 +4,7 @@
 Organiser les routes avec `express.Router()` au lieu de tout mettre dans `app.js`.
 
 ## Énoncé
-Crée un routeur dédié aux utilisateurs (`usersRouter`) dans un fichier séparé (`routes/users.router.js`), avec les endpoints suivants :
+Crée un routeur dédié aux utilisateurs (`usersRouter`) dans un fichier séparé (`routers/user.router.js`), avec les endpoints suivants :
 - `GET /users` → liste tous les utilisateurs
 - `GET /users/:id` → renvoie un utilisateur par son id (404 si non trouvé)
 
