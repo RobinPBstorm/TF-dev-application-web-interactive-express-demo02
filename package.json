@@ -1,0 +1,16 @@
+{
+  "name": "demo02",
+  "version": "1.0.0",
+  "description": "Nouvelle démonstration d'Express",
+  "license": "ISC",
+  "author": "Bstorm",
+  "type": "module",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node --watch src/app.js"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
