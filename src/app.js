@@ -1,6 +1,9 @@
 import express from 'express';
 
+//import des middlewares
 import timer from './middlewares/timer.js';
+import errorManager from './middlewares/errorManager.js';
+//import des routers
 import productRouter from './routers/product.router.js';
 import usersRouter from './routers/user.router.js';
 
@@ -29,6 +32,12 @@ app.get('/', (req, res) => {
 });
 app.use('/products',productRouter);
 app.use('/users', usersRouter);
+// route par défaut
+app.use('*splat', (req, res) => {
+    throw new Error("Bad url")
+});
+
+app.use(errorManager());
 
 app.listen(port, ()=> {
     console.log(`L'application écoute sur le port ${port}`);

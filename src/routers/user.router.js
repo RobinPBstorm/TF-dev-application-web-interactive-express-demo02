@@ -26,13 +26,17 @@ usersRouter.get('/', (req, res) => {
 usersRouter.get('/:id', (req, res) => {
     const id = parseInt(req.params.id);
     if (isNaN(id)) {
-        res.writeHead(401, "id invalid");
-        res.end();
+        // res.writeHead(401, "id invalid");
+        // res.end();
+        res.status(401);
+        throw new Error ("id invalid");
     }
     const user = users.find((u) => u.id == id);
     if (!user) {
-        res.writeHead(404, "user not found");
-        res.end();
+        // res.writeHead(404, "user not found");
+        // res.end();
+        res.status(404);
+        throw new Error ("user not found");
     }
     else {
         res.write(`user found: ${user.id} - ${user.name} `);

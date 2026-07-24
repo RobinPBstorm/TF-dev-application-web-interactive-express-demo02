@@ -131,3 +131,33 @@ productRouter.get("/", (req, res) => {
 });
 ```
 
+## Ajouter un middleware de gestion d'erreur
+
+La création:
+
+```js
+function errorManager () {
+    // important ici: 4 paramètres
+    return (err, req, res, next) => {
+        console.error(err.message);
+
+        res.status(res.statusCode || 500).json({
+            "message": err.message
+        });
+    }
+}
+
+export default errorManager;
+```
+
+Utiliser:
+
+```js
+// dans l'app.js
+import errorManager from './middlewares/errorManager.js';
+
+...
+
+// toutes nos routes
+app.use(errorManager());
+```
